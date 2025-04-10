@@ -8,15 +8,15 @@
                     <a class="nav-link">
                         <select class="form-select" aria-label="Default select example">
                             <option value="">Selecciona categoría</option>
-                            @for (cat of getCategorias(); track $index )
-                            {<option> {{cat.nombre}} </option>}
+                            @for (cat of getCategorias; track $index )
+                            {<option value="{{cat.id}}">{{cat.nombre}} </option>}
                         </select>
 
-                        <select class="form-select" aria-label="Default select example">
+                        <!-- <select class="form-select" aria-label="Default select example">
                             <option value="">Selecciona fabricante</option>
                             @for (fab of getFabricantes(); track $index )
-                            {<option> {{fab.nombre}} </option>}
-                        </select>
+                            {<option value="{{fab.id}}"> {{fab.nombre}} </option>}
+                        </select> -->
                     </a>
                 </li>
             </ul>
@@ -43,8 +43,8 @@
     </div>
     <div class="row">
         <div class="row row-cols-md-5">
-            @for (art of getArticles(); track $index )
-            {<app-article-card [datos]="art"></app-article-card>}
+            <!-- @for (art of getArticles(); track $index )
+            {<app-article-card [datos]="art"></app-article-card>} -->
         </div>
     </div>
 </ng-container>

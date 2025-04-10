@@ -12,9 +12,12 @@ export class SearchComponent {
 
   constructor(private api:ConexionAPIService) { }
 
+  private categorias:any = []
+  private fabricantes:any = []
+
 
   getCategorias() {return this.api.getCategorias();}
   getFabricantes() {return this.api.getFabricantes();}
-  getArticles() {return this.api.getArticulos();}
+  // getArticles() {return this.api.getArticulos();}
 
 }

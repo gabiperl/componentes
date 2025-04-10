@@ -12,6 +12,6 @@ export class ArticleCardComponent {
 
   constructor(private api:ConexionAPIService) { }
 
-  getArticles(){return this.api.getArticulos();}
+  // getArticles(){return this.api.getArticulos();}
 
 }
