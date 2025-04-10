@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ConexionAPIService } from '../../../conexion-api.service';
 
 @Component({
   selector: 'app-article-card',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styles: ``
 })
 export class ArticleCardComponent {
+  @Input() datos:any
+
+  constructor(private api:ConexionAPIService) { }
+
+  getArticles(){return this.api.getArticulos();}
 
 }
