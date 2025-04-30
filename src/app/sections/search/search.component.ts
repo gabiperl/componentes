@@ -4,10 +4,11 @@ import { ArticleCardComponent } from '../cart/article-card/article-card.componen
 import { FilterByPatternPipe } from '../../filter-by-pattern.pipe';
 import { FilterByCatPipe } from '../../filter-by-cat.pipe';
 import { FilterByFabPipe } from '../../filter-by-fab.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
-  imports: [ArticleCardComponent, FilterByPatternPipe, FilterByCatPipe, FilterByFabPipe],
+  imports: [FormsModule,ArticleCardComponent, FilterByPatternPipe, FilterByCatPipe, FilterByFabPipe,],
   templateUrl: './search.component.html',
   styles: ``
 })
@@ -15,9 +16,11 @@ export class SearchComponent {
 
   
   private fabricantes:any = []
-  private pattern:string = ""
-  private catID:string = '0'
-  private fabID:string = '0'
+  
+  // La variable pattern está relacionada gracias al ngModel
+  pattern:string = ""
+  catID:string = '0'
+  fabID:string = '0'
 
 
   constructor(private api:ConexionAPIService) { 
@@ -30,14 +33,21 @@ export class SearchComponent {
   getCategorias() {return this.api.getCategorias()}
   getFabricantes() {return this.fabricantes;}
 
-  setFabricante(fab:string) {this.fabID = fab;}
+  // setFabricante(fab:string) {this.fabID = fab;}
   getFabricante() {return this.fabID;}
 
-  setCategory(cat:string) {this.catID = cat;}
+  // setCategory(cat:string) {this.catID = cat;}
   getCategory() {return this.catID;}
 
-  setPattern(pattern:string) {this.pattern = pattern;}
+  // setPattern(pattern:string) {this.pattern = pattern;}
   getPattern() {return this.pattern;}
+
+  clearFilters()
+  {
+    this.pattern = ""
+    this.catID = '0'
+    this.fabID = '0'
+  }
 
   
 
