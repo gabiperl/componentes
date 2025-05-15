@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-link active" aria-current="page" routerLink="/home" routerLinkActive="fw-bold" >Search</a>
-            <a class="nav-link" routerLink="/cart" routerLinkActive="fw-bold">Cart</a>
+            <a [class]="{'carritoNoVacio': !isCartEmpty()}" class="nav-link" routerLink="/cart" routerLinkActive="fw-bold">Cart</a>
         </div>
       </div>
     </div>

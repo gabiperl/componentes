@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ConexionAPIService } from '../../../conexion-api.service';
+import { LogicaService } from '../../../logica.service';
 
 @Component({
   selector: 'app-article-card',
@@ -10,8 +11,11 @@ import { ConexionAPIService } from '../../../conexion-api.service';
 export class ArticleCardComponent {
   @Input() datos:any
 
-  constructor(private api:ConexionAPIService) { }
+  constructor(private cart:LogicaService) { }
+
+  addToCart() {
+    {this.cart.addToCart(this.datos)}
 
   // getArticles(){return this.api.getArticulos();}
 
-}
+}}

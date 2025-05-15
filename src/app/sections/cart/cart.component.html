@@ -1,7 +1,9 @@
 <h3>Carrito</h3>
 
 <div class="row row-cols-md-1">
-    AQUÍ VA UNA REPETICIÓN DE LLAMADAS AL COMPONENTE ARTICULO-CARRITO
+    @for (art of getArticulosCarrito(); track $index)
+    {<app-cart-article [datos]="art" />}
+    
     <div class="row row-cols-md-5 cartPrice">
         <div></div>
         <div></div>

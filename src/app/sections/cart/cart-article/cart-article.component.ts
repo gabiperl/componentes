@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { LogicaService } from '../../../logica.service';
 
 @Component({
   selector: 'app-cart-article',
@@ -19,5 +20,19 @@ input.form-control
     }`
 })
 export class CartArticleComponent {
+ @Input() datos: any
+
+ constructor(private cart:LogicaService) { }
+
+addUnit(datos:any)
+{this.cart.addUnit(this.datos)}
+
+decreaseUnit()
+{
+  this.datos
+}
+
+ removeArtFromCart(id: number) {
+  this.cart.removeArticle(id);}
 
 }
