@@ -8,6 +8,8 @@ export class LogicaService {
   private carrito:any[] = []
   // private cartLS:any[] = []
 
+ 
+
   constructor() {
     this.carrito = JSON.parse(localStorage.getItem('carrito') || '[]')
 
@@ -26,9 +28,25 @@ export class LogicaService {
     this.saveLS();
   }
 
-  addUnit(datos:any){th}
+  addUnit(datos:any) 
+  {if (datos.cantidad < 10) {datos.cantidad++;}}
+
+  clearCart() {
+    this.carrito = [];
+    localStorage.removeItem('carrito');
+  }
+
+  removeUnit(datos:any)
+  {if (datos.cantidad > 1) {datos.cantidad--;}}
   
   getArticulosCarrito() {return this.carrito;}
+  getTotalCarrito() {
+    let total = 0;
+    this.carrito.forEach(art => {
+      total += art.cantidad * art.precio;
+    });
+    return total;
+  }
 
   isCartEmpty() {return this.carrito.length == 0;}
 

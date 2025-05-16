@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { ArticleCardComponent } from "./article-card/article-card.component";
 import { LogicaService } from '../../logica.service';
 import { CartArticleComponent } from "./cart-article/cart-article.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cart',
-  imports: [ArticleCardComponent, CartArticleComponent],
+  imports: [ArticleCardComponent, CartArticleComponent, CommonModule],
   templateUrl: './cart.component.html',
   styles: `
   
@@ -19,7 +20,14 @@ export class CartComponent {
 
   constructor(private cart:LogicaService) {}
 
+  clearCart()
+  {this.cart.clearCart();}
+
   getArticulosCarrito()
   {return this.cart.getArticulosCarrito();} // Devuelve el carrito de la compra
+
+  getTotalCarrito()
+  {return this.cart.getTotalCarrito();}
+
 
 }

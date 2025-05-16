@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { LogicaService } from '../../../logica.service';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-cart-article',
-  imports: [],
+  imports: [DecimalPipe, ],
   templateUrl: './cart-article.component.html',
   styles: `
   
@@ -27,10 +28,8 @@ export class CartArticleComponent {
 addUnit(datos:any)
 {this.cart.addUnit(this.datos)}
 
-decreaseUnit()
-{
-  this.datos
-}
+decreaseUnit(datos:any)
+{this.cart.removeUnit(this.datos)}
 
  removeArtFromCart(id: number) {
   this.cart.removeArticle(id);}

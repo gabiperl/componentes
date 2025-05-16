@@ -3,6 +3,12 @@
     <div class="card-body">
         <h5 class="card-title">{{datos.nombre}}</h5>
         <p class="card-text">{{datos.precio}}</p>
-		<button (click)="addToCart()" class="btn btn-primary">Añadir al carrito</button>
+        @if (datos.stock == false) {
+            <button class="btn btn-grey" disabled  >Stock no disponible</button>
+        }
+        @else {
+            <button (click)="addToCart()" class="btn btn-primary" >Añadir al carrito</button>
+        }
+        
     </div>
 </div>

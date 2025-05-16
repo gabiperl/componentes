@@ -5,11 +5,11 @@
     </div>
     <div>{{datos.precio}}</div>
     <div>
-    <button type="button" class="btn btn-primary" (click)="decreaseUnit()">-</button>
-    <input type="text" class="form-control d-inline-block text-center" [value]="datos.unidades" readonly disabled style="width: 50px; margin: 0 5px;">
-    <button type="button" class="btn btn-primary" (click)="addUnit()">+</button>
+    <button type="button" class="btn btn-primary" (click)="decreaseUnit(datos.id)">-</button>
+    <input type="text" class="form-control d-inline-block text-center" disabled value="{{datos.cantidad}}">
+    <button type="button" class="btn btn-primary" (click)="addUnit(datos)">+</button>
     </div>
-    <div>SUBTOTAL DE ESE ARTÍCULO</div>
+    <div> {{datos.cantidad * datos.precio | number:'1.2-2' }} €</div>
     <div>
 		<button type="button" class="btn btn-danger" (click)="removeArtFromCart(datos.id)">Eliminar</button>
     </div>
