@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { LogicaService } from '../../../logica.service';
-import { DecimalPipe } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-cart-article',
-  imports: [DecimalPipe, ],
+  imports: [DecimalPipe, CommonModule],
   templateUrl: './cart-article.component.html',
   styles: `
   

@@ -9,7 +9,7 @@
     <input type="text" class="form-control d-inline-block text-center" disabled value="{{datos.cantidad}}">
     <button type="button" class="btn btn-primary" (click)="addUnit(datos)">+</button>
     </div>
-    <div> {{datos.cantidad * datos.precio | number:'1.2-2' }} €</div>
+    <div> {{datos.cantidad * datos.precio | decimal:2}}</div>
     <div>
 		<button type="button" class="btn btn-danger" (click)="removeArtFromCart(datos.id)">Eliminar</button>
     </div>

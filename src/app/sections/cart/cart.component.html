@@ -8,7 +8,7 @@
         <div></div>
         <div></div>
         <div>Total:</div>
-        <div>{{ getTotalCarrito() | number:'1.2-2'}}€</div>
+        <div>{{ getTotalCarrito() | decimal:2}}</div>
         <div> <button type="button" class="btn btn-danger" (click)="clearCart()">Vaciar carrito</button></div>
     </div>
 </div>

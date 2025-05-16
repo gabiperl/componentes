@@ -3,10 +3,11 @@ import { ArticleCardComponent } from "./article-card/article-card.component";
 import { LogicaService } from '../../logica.service';
 import { CartArticleComponent } from "./cart-article/cart-article.component";
 import { CommonModule } from '@angular/common';
+import { DecimalPipe } from '../../decimal.pipe';
 
 @Component({
   selector: 'app-cart',
-  imports: [ArticleCardComponent, CartArticleComponent, CommonModule],
+  imports: [ArticleCardComponent, CartArticleComponent, CommonModule, DecimalPipe],
   templateUrl: './cart.component.html',
   styles: `
   
